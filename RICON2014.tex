@@ -22,7 +22,7 @@
 
 \title{Data Dissemination: from Academia to Industry}
 
-\author{\textbf{Jo{\~a}o Leit{\~a}o}\\NOVA-LINCS \& NOVA University of Lisbon 
+\author{\textbf{Jo{\~a}o Leit{\~a}o}\\NOVA-LINCS \& NOVA University of Lisbon
 \\\textbf{Jordan West}\\BASHO Inc.
 }
 \date{RICON\\Las Vegas\\October 2014}
@@ -177,14 +177,51 @@
 }
 }
 
+\subsection{Global Information, Needed Locally}
 \frame{
 \frametitle{The Industry View: Cluster Metadata Management}
-\framesubtitle{}
+\framesubtitle{Global Information, Needed Locally}
+\begin{block}{Operational Information}
+  Mebership, Ownership, Transfers, Capabilities
+\end{block}
 
+\begin{block}{Configuration}
+  Replica Counts, Backends, Is Feature X Enabled?
+\end{block}
+
+\begin{block}{Monitoring Data}
+  Transfer Statistics, Background Work Tracking, Self-Monitoring
+\end{block}
+}
+
+\subsection{Requirements}
+\frame{
+\frametitle{The Industry View: Cluster Metadata Management}
+\framesubtitle{Requirements}
+\begin{itemize}
+  \item Failure Tolerance
+  \begin{itemize}
+    \item Disable malicious clients despite network partitions
+    \item Add new nodes despite others being down
+  \end{itemize}
+  \pause
+  \item Quick Convergence
+  \begin{itemize}
+    \item Become aware of new nodes ASAP
+    \item Keep monitoring data as fresh as possible
+  \end{itemize}
+  \pause
+  \item Minimal Resource Usage
+  \begin{itemize}
+    \item Goal is to speed up, not slow down, foreground work
+    \item Network is needed for the data!
+  \end{itemize}
+  \pause
+  \item AP typically, CP rarely necessary
+\end{itemize}
 }
 
 %To Jordan: Add your sub sections / main slides here
-
 \section{Cluster Metadata Management In Riak}
 
 \frame
@@ -198,9 +235,78 @@
 
 %To Jordan: Add your sub sections / main slides here
 
+\subsection{Implementations}
 \frame{
 \frametitle{Cluster Metadata Management In Riak}
-\framesubtitle{}
+\framesubtitle{Implementations}
+\begin{block}{0.x}
+\begin{itemize}
+  \item Peer Service: Classic Anti-Entropy Protocol
+  \item Data Dissemination: Same
+\end{itemize}
+\end{block}
+\begin{block}{1.x}
+\begin{itemize}
+  \item Peer Service: Static Graph Overlay w/ Anti-Entropy
+  \item Data Dissemination: Same
+\end{itemize}
+\end{block}
+\begin{block}{2.x}
+\begin{itemize}
+  \item Peer Service: Static Graph Overlay w/ Anti-Entropy
+  \item Data Dissemination: Sender-Based Embedded Trees
+\end{itemize}
+\end{block}
+}
+
+\subsection{Motivations}
+\frame{
+\frametitle{Cluster Metadata Management In Riak}
+\framesubtitle{Motivations}
+\begin{block}{0.x to 1.0}
+\begin{itemize}
+  \item Anti-Entropy is Reliable but Slow to Converge
+  \item Improve Convergence Time, Specifically in Failure Scenarios
+\end{itemize}
+\end{block}
+\begin{block}{1.x to 2.0}
+\begin{itemize}
+  \item Static Graph Overlay/Anti-Entropy have several issues:
+    \begin{itemize}
+      \item Too Much Network Overhead
+      \item Improved Convergence Only Needed for Subset of Data
+      \item Cold Rumor Mongering
+    \end{itemize}
+  \item Improve Resource Usage and Stability
+\end{itemize}
+\end{block}
+}
+
+\subsection{Plumtree: From Academia to Industry}
+\frame{
+\frametitle{Cluster Metadata Management In Riak}
+\framesubtitle{Plumtree: From Academia to Industry}
+
+}
+
+\subsection{Extending Plumtree}
+\frame{
+\frametitle{Cluster Metadata Management In Riak}
+\framesubtitle{Extending Plumtree}
+
+}
+
+\subsection{Measurements}
+\frame{
+\frametitle{Cluster Metadata Management In Riak}
+\framesubtitle{Measurements}
+
+}
+
+\subsection{Peer Service Tuning}
+\frame{
+\frametitle{Cluster Metadata Management In Riak}
+\framesubtitle{Peer Service Tuning}
 
 }
 
@@ -298,13 +404,22 @@
 }
 }
 
+\subsection{Measuring Interior Nodes}
 \frame{
 \frametitle{The Industry View: Improving Cluster Metadata Management}
-\framesubtitle{}
+\framesubtitle{Measuring Interior Nodes}
 
 }
 
-\section{The Future of Cluster Metadata Management in Riak}
+\subsection{The Peer Service's Role}
+\frame{
+\frametitle{The Industry View: Improving Cluster Metadata Management}
+\framesubtitle{The Peer Service's Role}
+
+}
+
+
+\section{The Future of Cluster Metadata in Riak}
 
 %To Jordan: Add your sub sections / main slides here
 
@@ -317,10 +432,35 @@
 }
 }
 
-\frame{
-\frametitle{The Future of Cluster Metadata Management in Riak}
-\framesubtitle{}
 
+\subsection{Expand Usage}
+\frame{
+\frametitle{The Future of Cluster Metadata in Riak}
+\framesubtitle{Expand Usage}
+\begin{block}{Migration \& New Data}
+\begin{itemize}
+  \item Move data from 1.x subsystem to 2.x subsystem
+  \item Store data we couldn't before
+\end{itemize}
+\end{block}
+\begin{block}{WAN Replication}
+\begin{itemize}
+  \item Integrate with Riak's Multi-Site Replication
+  \item Abstract Messaging Layer
+\end{itemize}
+\end{block}
+}
+
+\subsection{Improve Stability}
+\frame{
+\frametitle{The Future of Cluster Metadata in Riak}
+\framesubtitle{Improve Stability}
+\begin{block}{Peer Service}
+
+\end{block}
+\begin{block}{Managing Interior Nodes}
+
+\end{block}
 }
 
 \section{Summary}
@@ -344,12 +484,12 @@
 {
 	\frametitle{}
 	\framesubtitle{}
-	
+
 	\begin{center}
 		{\Huge
 			Thanks.
 		}
-	\end{center}	
+	\end{center}
 }
 
 \end{document}
