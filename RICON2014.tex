@@ -286,28 +286,56 @@
 \frame{
 \frametitle{Cluster Metadata Management In Riak}
 \framesubtitle{Plumtree: From Academia to Industry}
-
+\begin{block}{Connectivity}
+``all nodes should have in their partial views...another correct node'' is not an invariant we can maintain
+\end{block}
+\begin{block}{System Model}
+Must consider dropped, delayed, duplicated* messages in addition to node failures
+\end{block}
+\begin{block}{Topology}
+Peer Service is Fully Connected (as is Erlang)
+\end{block}
+\begin{block}{Membership}
+Operator-controlled instead of reactive (failure detector is implemented separately from peer service)
+\end{block}
 }
 
 \subsection{Extending Plumtree}
 \frame{
 \frametitle{Cluster Metadata Management In Riak}
 \framesubtitle{Extending Plumtree}
-
+\begin{block}{What happens if Lazy Messages are Dropped?}
+Add to Outstanding Set. Remove on Graft or Ack
+\end{block}
+\begin{block}{Handling Extreme Failures}
+Back protocol by random anti-entropy with peers that are not in eager or lazy sets
+\end{block}
+\begin{block}{Shared vs. Sender-Based Trees}
+Sender-Based. Minimize overhead w/ Lazy Construction
+\end{block}
 }
 
 \subsection{Measurements}
 \frame{
 \frametitle{Cluster Metadata Management In Riak}
 \framesubtitle{Measurements}
-
+\begin{itemize}
+\item Reduced convergence time (measured in LDH) by 66\%
+\item Reduced needless message overhead in stable state 99.9\%
+\item \% Failures before needing to rely on anti-entropy good for small clusters (near 90\%) but decreased quickly for larger clusters (under 50\%)
+\end{itemize}
 }
 
 \subsection{Peer Service Tuning}
 \frame{
 \frametitle{Cluster Metadata Management In Riak}
 \framesubtitle{Peer Service Tuning}
-
+\begin{itemize}
+\item Want to increase percent failures we can tolerate before relying on anti-entropy
+\item Fanout of tree given to us by peer service matters
+\item For clusters > 10 nodes, fanout = ln(cluster size) + 1
+\item With our use of multiple trees, more peer service tuning may be necessary
+\end{itemize}
 }
 
 
@@ -408,14 +436,35 @@
 \frame{
 \frametitle{The Industry View: Improving Cluster Metadata Management}
 \framesubtitle{Measuring Interior Nodes}
-
+\begin{block}{10 Nodes}
+  \begin{itemize}
+    \item 4 of 10 nodes are interior in 3 of 10 trees
+    \item 3 of 10 nodes are interior in 4 of 10 trees
+    \item 3 of 10 nodes are interior in 5 of 10 trees
+  \end{itemize}
+\end{block}
+\begin{block}{20 Nodes}
+  \begin{itemize}
+    \item 4 nodes are interior only when roots
+    \item 16 nodes are interior in 5 or more trees
+  \end{itemize}
+\end{block}
+\begin{block}{80 Nodes}
+  \begin{itemize}
+    \item 4 nodes are interior only when roots
+    \item 36 of 80 nodes are interior in > 25\% of trees
+  \end{itemize}
+\end{block}
 }
 
 \subsection{The Peer Service's Role}
 \frame{
 \frametitle{The Industry View: Improving Cluster Metadata Management}
-\framesubtitle{The Peer Service's Role}
-
+\framesubtitle{Improving Interior Node Counts}
+\begin{itemize}
+\item Coupling between fanout, number of trees, and how many times a node must be interior
+\item Height of initial trees constructed by peer service
+\end{itemize}
 }
 
 
@@ -437,6 +486,11 @@
 \frame{
 \frametitle{The Future of Cluster Metadata in Riak}
 \framesubtitle{Expand Usage}
+\begin{block}{Exploring Thicket}
+\begin{itemize}
+  \item Research Area
+\end{itemize}
+\end{block}
 \begin{block}{Migration \& New Data}
 \begin{itemize}
   \item Move data from 1.x subsystem to 2.x subsystem
@@ -448,18 +502,6 @@
   \item Integrate with Riak's Multi-Site Replication
   \item Abstract Messaging Layer
 \end{itemize}
-\end{block}
-}
-
-\subsection{Improve Stability}
-\frame{
-\frametitle{The Future of Cluster Metadata in Riak}
-\framesubtitle{Improve Stability}
-\begin{block}{Peer Service}
-
-\end{block}
-\begin{block}{Managing Interior Nodes}
-
 \end{block}
 }
 
