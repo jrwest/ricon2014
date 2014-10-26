@@ -61,20 +61,43 @@
 \frame{
 
 \frametitle{Motivation}
-\framesubtitle{Application Level Broadcast/Data Dissemination}
-%JLEITAO: To be revised
+\framesubtitle{Data Dissemination}
+
+\begin{block}{Classical Distributed Systems Challenge}
+How to disseminate information across a large number of participants?
+\end{block}
+
+\pause
+
 \begin{itemize}
-	\item Several distributed systems applications require broadcast primitives.
-	\item Lack of support at the IP level.
-	\pause
-	\item Application level broadcast:
-	\begin{itemize}
-		\item Deterministic tree-based.
-		\item Random gossip-based.
-	\end{itemize}
+\item Some intuitive requirements:
+\begin{itemize}
+	\item Reliable.
+	\item Efficient.
+	\item Scalable.
+\end{itemize}
 \end{itemize}
 
 }
+
+\frame{
+
+\frametitle{Motivation}
+\framesubtitle{Data Dissemination}
+
+\begin{block}{Applications}
+\begin{itemize}
+	\item Notification systems.
+	\item Streaming multimedia content.
+	\item \emph{Cluster Management}
+\end{itemize}
+\end{block}
+
+\pause
+
+\begin{block}{In practice...}
+When I started to think about this problem, I was mostly focused on peer-to-peer systems.
+\end{block}}
 
 \section{The Academic View: Data Dissemination}
 
@@ -102,11 +125,171 @@
 \frametitle{The Academic View: Data Dissemination}
 \framesubtitle{Design Alternatives: One to All}
 
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/one2all1}
+  \end{center}
+\end{figure}
+
+}
+
+\frame{
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: One to All}
+
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/one2all2}
+  \end{center}
+\end{figure}
+
+}
+
+\frame{
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: One to All}
+
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/one2all3}
+  \end{center}
+\end{figure}
+
+}
+
+\frame{
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: One to All}
+
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/one2all4}
+  \end{center}
+\end{figure}
+
+}
+
+\frame{
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: One to All}
+
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/one2all5}
+  \end{center}
+\end{figure}
+
+}
+
+\frame{
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: One to All}
+
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/one2all6}
+  \end{center}
+\end{figure}
+
+}
+
+\frame{
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: One to All}
+
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/one2all7}
+  \end{center}
+\end{figure}
+
+}
+
+\frame{
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: One to All}
+
+\begin{block}{One to All}
+	\begin{itemize}
+		\item Positive
+		\begin{itemize}
+			\item Straight forward.
+			\item No redundancy (i.e, each node receives each message a single time).
+		\end{itemize}
+	\end{itemize}
+	
+	\pause
+	
+	\begin{itemize}
+		\item Negative Aspects:
+		\begin{itemize}
+			\item Requires each node to know the full membership.
+			\item Not Scalable (no load distribution).
+			\pause
+			\item Not Resilient to Faults.
+		\end{itemize}
+	\end{itemize}
+}
+
+\frame{
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: One to All}
+
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/fault1}
+  \end{center}
+\end{figure}
+
+}
+
+\frame{
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: One to All}
+
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/fault2}
+  \end{center}
+\end{figure}
+
+}
+
+\frame{
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: One to All}
+
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/fault3}
+  \end{center}
+\end{figure}
+
+}
+
+\frame{
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: One to All}
+
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/fault4}
+  \end{center}
+\end{figure}
+
+}
+
+\subsection{Design Alternatives: Spanning Tree}
+
+\frame{
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: Spanning Tree}
+
 }
 
 \subsection{Design Alternatives: Flood}
 
-\frame{
+\frame{	
 \frametitle{The Academic View: Data Dissemination}
 \framesubtitle{Design Alternatives: Flood}
 
@@ -117,14 +300,6 @@
 \frame{
 \frametitle{The Academic View: Data Dissemination}
 \framesubtitle{Design Alternatives: Gossip}
-
-}
-
-\subsection{Design Alternatives: Spanning Tree}
-
-\frame{
-\frametitle{The Academic View: Data Dissemination}
-\framesubtitle{Design Alternatives: Spanning Tree}
 
 }
 
