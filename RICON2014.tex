@@ -44,7 +44,7 @@
 {
 	\frametitle{Outline}
 {
-\small
+\tiny
 	\tableofcontents[hideallsubsections]
 }
 }
@@ -53,7 +53,7 @@
 {
 	\frametitle{Outline}
 {
-\small
+\tiny
 	\tableofcontents[currentsection,hideallsubsections]
 }
 }
@@ -105,21 +105,30 @@ When I started to think about this problem, I was mostly focused on peer-to-peer
 {
 	\frametitle{Outline}
 {
-\small
-	\tableofcontents[currentsection,hideallsubsections]
-}
-}
-
-\frame
-{
-	\frametitle{Outline}
-{
-\small
+\tiny
 	\tableofcontents[currentsection,hideallsubsections]
 }
 }
 
 \subsection{Design Alternatives: One to All}
+
+\frame{
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: One to All}
+
+	\begin{block}{Lets start simple...}
+		If you have information to disseminate, send it to everyone!
+	\end{block}
+	
+	\pause
+	
+	~\\
+	
+	\begin{center}
+	\huge{One to All}
+	\end{center}
+
+}
 
 \frame{
 \frametitle{The Academic View: Data Dissemination}
@@ -191,7 +200,7 @@ When I started to think about this problem, I was mostly focused on peer-to-peer
   \end{center}
 \end{figure}
 
-}
+} 
 
 \frame{
 \frametitle{The Academic View: Data Dissemination}
@@ -274,6 +283,236 @@ When I started to think about this problem, I was mostly focused on peer-to-peer
 \frametitle{The Academic View: Data Dissemination}
 \framesubtitle{Design Alternatives: Spanning Tree}
 
+	\begin{block}{Dealing with Load Distribution}
+		Organize participants/nodes in a tree and forward messages across the tree.
+	\end{block}
+	
+	\pause
+	
+	~\\
+	
+	\begin{center}
+	\huge{Spanning Treel}
+	\end{center}
+
+}
+
+\frame{
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: Spanning Tree}
+
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/spanningtree1}
+  \end{center}
+\end{figure}
+
+}
+
+\frame{
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: Spanning Tree}
+
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/spanningtree2}
+  \end{center}
+\end{figure}
+
+}
+
+\frame{
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: Spanning Tree}
+
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/spanningtree3}
+  \end{center}
+\end{figure}
+
+}
+
+\frame{
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: Spanning Tree}
+
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/spanningtree4}
+  \end{center}
+\end{figure}
+
+}
+
+\frame{
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: Spanning Tree}
+
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/spanningtree5}
+  \end{center}
+\end{figure}
+
+}
+
+\frame{
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: Spanning Tree}
+
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/spanningtree6}
+  \end{center}
+\end{figure}
+
+}
+
+\frame{
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: Spanning Tree}
+
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/spanningtree7}
+  \end{center}
+\end{figure}
+
+}
+
+\frame{
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: Spanning Tree}
+
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/spanningtree8}
+  \end{center}
+\end{figure}
+
+}
+
+\frame{
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: Spanning Tree}
+
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/spanningtree9}
+  \end{center}
+\end{figure}
+
+}
+
+\frame{
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: Spanning Tree}
+
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/spanningtree10}
+  \end{center}
+\end{figure}
+
+}
+
+\frame{
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: Spanning Tree}
+
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/spanningtree11}
+  \end{center}
+\end{figure}
+
+}
+
+\frame{
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: Spanning Tree}
+
+\begin{block}{Spanning Tree}
+	\begin{itemize}
+		\item Positive Aspects:
+		\begin{itemize}
+			\item Load Distribution.
+			\item No redundancy (i.e, each node receives each message a single time).
+		\end{itemize}
+	\end{itemize}
+	
+	\pause
+	
+	\begin{itemize}
+		\item Negative Aspects:
+		\begin{itemize}
+			\item Complexity in Managing the Topology (Hinders Scalability).
+			\pause
+			\item (Still) Not Resilient to Faults.
+		\end{itemize}
+	\end{itemize}
+\end{block}
+}
+
+\frame{
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: Spanning Tree}
+
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/spfault1}
+  \end{center}
+\end{figure}
+
+}
+
+\frame{
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: Spanning Tree}
+
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/spfault2}
+  \end{center}
+\end{figure}
+
+}
+
+\frame{
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: Spanning Tree}
+
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/spfault3}
+  \end{center}
+\end{figure}
+
+}
+
+\frame{
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: Spanning Tree}
+
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/spfault4}
+  \end{center}
+\end{figure}
+
+}
+
+\frame{
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: Spanning Tree}
+
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/spfault5}
+  \end{center}
+\end{figure}
+
 }
 
 \subsection{Design Alternatives: Flood}
@@ -336,7 +575,7 @@ When I started to think about this problem, I was mostly focused on peer-to-peer
 {
 	\frametitle{Outline}
 {
-\small
+\tiny
 	\tableofcontents[currentsection,hideallsubsections]
 }
 }
@@ -392,7 +631,7 @@ When I started to think about this problem, I was mostly focused on peer-to-peer
 {
 	\frametitle{Outline}
 {
-\small
+\tiny
 	\tableofcontents[currentsection,hideallsubsections]
 }
 }
@@ -509,7 +748,7 @@ Sender-Based. Minimize overhead w/ Lazy Construction
 {
 	\frametitle{Outline}
 {
-\small
+\tiny
 	\tableofcontents[currentsection,hideallsubsections]
 }
 }
@@ -554,7 +793,7 @@ Sender-Based. Minimize overhead w/ Lazy Construction
 {
 	\frametitle{Outline}
 {
-\small
+\tiny
 	\tableofcontents[currentsection,hideallsubsections]
 }
 }
@@ -591,7 +830,7 @@ Sender-Based. Minimize overhead w/ Lazy Construction
 {
 	\frametitle{Outline}
 {
-\small
+\tiny
 	\tableofcontents[currentsection,hideallsubsections]
 }
 }
@@ -640,7 +879,7 @@ Sender-Based. Minimize overhead w/ Lazy Construction
 {
 	\frametitle{Outline}
 {
-\small
+\tiny
 	\tableofcontents[currentsection,hideallsubsections]
 }
 }
@@ -675,7 +914,7 @@ Sender-Based. Minimize overhead w/ Lazy Construction
 {
 	\frametitle{Outline}
 {
-\small
+\tiny
 	\tableofcontents[currentsection,hideallsubsections]
 }
 }
