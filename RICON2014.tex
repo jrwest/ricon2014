@@ -517,10 +517,167 @@ When I started to think about this problem, I was mostly focused on peer-to-peer
 
 \subsection{Design Alternatives: Flood}
 
-\frame{	
+\frame{
 \frametitle{The Academic View: Data Dissemination}
 \framesubtitle{Design Alternatives: Flood}
 
+	\begin{block}{Dealing with Fault Tolerance}
+		Organize participants/nodes in a random, highly connected, graph and forward messages across all links.
+	\end{block}
+	
+	\pause
+	
+	~\\
+	
+	\begin{center}
+	\huge{Flood}
+	\end{center}
+
+}
+
+\frame{	
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: Flood}
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/flood1}
+  \end{center}
+\end{figure}
+}
+
+\frame{	
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: Flood}
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/flood2}
+  \end{center}
+\end{figure}
+}
+
+\frame{	
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: Flood}
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/flood3}
+  \end{center}
+\end{figure}
+}
+
+\frame{	
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: Flood}
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/flood4}
+  \end{center}
+\end{figure}
+}
+
+\frame{	
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: Flood}
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/flood5}
+  \end{center}
+\end{figure}
+}
+
+\frame{	
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: Flood}
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/flood6}
+  \end{center}
+\end{figure}
+}
+
+\frame{	
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: Flood}
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/flood7}
+  \end{center}
+\end{figure}
+}
+
+\frame{	
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: Flood}
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/flood8}
+  \end{center}
+\end{figure}
+}
+
+\frame{	
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: Flood}
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/flood9}
+  \end{center}
+\end{figure}
+}
+
+\frame{	
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: Flood}
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/flood10}
+  \end{center}
+\end{figure}
+}
+
+
+\frame{	
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: Flood}
+	\begin{block}{Flood}
+	\begin{itemize}
+		\item Positive Aspects:
+		\begin{itemize}
+			\item Load Distribution.
+			\item Simple Design, and a random overlay is easier to maintain than a tree.
+			\item Robust (due to inherent redudancy).
+		\end{itemize}
+	\end{itemize}
+	
+	\pause
+	
+	\begin{itemize}
+		\item Negative Aspects:
+		\begin{itemize}
+			\item No longer that efficient (nodes receive and are required to process several copies of each message).
+		\end{itemize}
+	\end{itemize}
+\end{block}
+}
+
+\frame{	
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: Flood}
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/flood10}
+  \end{center}
+\end{figure}
+}
+
+\frame{	
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: Flood}
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/flood11}
+  \end{center}
+\end{figure}
 }
 
 \subsection{Design Alternatives: Gossip}
@@ -528,7 +685,172 @@ When I started to think about this problem, I was mostly focused on peer-to-peer
 \frame{
 \frametitle{The Academic View: Data Dissemination}
 \framesubtitle{Design Alternatives: Gossip}
+	\begin{block}{Addressing Efficiency}
+		Organize participants/nodes in a random, highly connected, graph and have nodes forward each message across a subset ($f$) of the links.
+	\end{block}
+	
+	\pause
+	
+	~\\
+	
+	\begin{center}
+	\huge{Gossip}
+	\end{center}
 
+}
+
+\frame{
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: Gossip}
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/gossip1}
+  \end{center}
+\end{figure}
+}
+
+\frame{
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: Gossip}
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/gossip2}
+  \end{center}
+\end{figure}
+}
+
+\frame{
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: Gossip}
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/gossip3}
+  \end{center}
+\end{figure}
+}
+
+\frame{
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: Gossip}
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/gossip4}
+  \end{center}
+\end{figure}
+}
+
+
+\frame{
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: Gossip}
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/gossip5}
+  \end{center}
+\end{figure}
+}
+
+
+\frame{
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: Gossip}
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/gossip6}
+  \end{center}
+\end{figure}
+}
+
+
+\frame{
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: Gossip}
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/gossip7}
+  \end{center}
+\end{figure}
+}
+
+
+\frame{
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: Gossip}
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/gossip8}
+  \end{center}
+\end{figure}
+}
+
+
+\frame{
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: Gossip}
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/gossip9}
+  \end{center}
+\end{figure}
+}
+
+
+\frame{
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: Gossip}
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/gossip10}
+  \end{center}
+\end{figure}
+}
+
+
+\frame{
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: Gossip}
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/gossip11}
+  \end{center}
+\end{figure}
+}
+
+
+\frame{
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: Gossip}
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/gossip12}
+  \end{center}
+\end{figure}
+}
+
+\frame{
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: Gossip}
+	\begin{block}{Gossip}
+	\begin{itemize}
+		\item Positive Aspects:
+		\begin{itemize}
+			\item Load Distribution.
+			\item Simple Design, and a random overlay is easier to maintain than a tree.
+			\item Robust (due to inherent redudancy).
+		\end{itemize}
+	\end{itemize}
+	
+	\pause
+	
+	\begin{itemize}
+		\item Negative Aspects:
+		\begin{itemize}
+			\item Slightly inefficient (but better than flood).
+			\pause
+			\item No longer predictable (each message will be disseminated across different links.
+		\end{itemize}
+	\end{itemize}
+\end{block}
 }
 
 \subsection{Design Alternatives: Embedded Tree}
@@ -536,22 +858,395 @@ When I started to think about this problem, I was mostly focused on peer-to-peer
 \frame{
 \frametitle{The Academic View: Data Dissemination}
 \framesubtitle{Design Alternatives: Embedded Tree}
+	\begin{block}{All these design alternatives:}
+		\begin{itemize}
+			\item One-to-All.
+			\item Spanning Tree.
+			\item Flood.
+			\item Gossip.
+		\end{itemize}
+	\end{block}
+}
 
+\frame{
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: Embedded Tree}
+	\begin{block}{All these design alternatives:}
+		\begin{itemize}
+			\item Spanning Tree.
+			\item Flood.
+			\item Gossip.
+		\end{itemize}
+	\end{block}
+}
+
+\frame{
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: Embedded Tree}
+	\begin{block}{All these design alternatives:}
+		\begin{itemize}
+			\item \textbf{Spanning Tree [Efficiency]}.
+			\item Flood.
+			\item Gossip.
+		\end{itemize}
+	\end{block}
+}
+
+\frame{
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: Embedded Tree}
+	\begin{block}{All these design alternatives:}
+		\begin{itemize}
+			\item \textbf{Spanning Tree [Efficiency]}.
+			\item \textbf{Flood. [Robustness]}.
+			\item \textbf{Gossip. [Robustness]}.
+		\end{itemize}
+	\end{block}
+}
+
+\frame{
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: Embedded Tree}
+	
+	\center{
+	\huge{
+		At some point you start to see \textbf{trees} everywhere...
+	}
+	}
+}
+
+\frame{
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: Embedded Tree}
+	
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/floodtree1}
+  \end{center}
+\end{figure}
+}
+
+\frame{
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: Embedded Tree}
+	
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/floodtree2}
+  \end{center}
+\end{figure}
+}
+
+\frame{
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: Embedded Tree}
+	
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/floodtree3}
+  \end{center}
+\end{figure}
+}
+
+\frame{
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: Embedded Tree}
+	
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/floodtree4}
+  \end{center}
+\end{figure}
+}
+
+\frame{
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: Embedded Tree}
+	
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/floodtree5}
+  \end{center}
+\end{figure}
+}
+
+\frame{
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: Embedded Tree}
+	
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/gossiptree1}
+  \end{center}
+\end{figure}
+}
+
+\frame{
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: Embedded Tree}
+	
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/gossiptree2}
+  \end{center}
+\end{figure}
+}
+
+\frame{
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: Embedded Tree}
+	
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/gossiptree3}
+  \end{center}
+\end{figure}
+}
+
+
+\frame{
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: Embedded Tree}
+	
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/gossiptree4}
+  \end{center}
+\end{figure}
+}
+
+
+\frame{
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: Embedded Tree}
+	
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/gossiptree5}
+  \end{center}
+\end{figure}
+}
+
+\frame{
+\frametitle{The Academic View: Data Dissemination}
+\framesubtitle{Design Alternatives: Embedded Tree}
+
+	\begin{block}{This observation:}
+		Lead us to design the \textbf{Plumtree protocol}.
+	\end{block}
+%	
+%	\pause
+%	
+%	\begin{figure}[h]
+%  	\begin{center}
+%	  \includegraphics[width=1\textwidth]{pics/plumtreecoauthors}
+% 	 \end{center}
+%	\end{figure}
 }
 
 \section{Embedded Tree: Plumtree Protocol}
 
 \frame{
 \frametitle{Embedded Trees: Plumtree Protocol}
-\framesubtitle{Building the Tree}
+\framesubtitle{Gossip modes of operation}
+	
+	\begin{block}{Eager push}
+	Nodes send the message payload to random selected peers as soon as they receive a message for the first time.
+%	\begin{itemize}
+%		\item Lower latency.
+%	\end{itemize}
+\end{block}
+
+\pause
+
+\begin{block}{Lazy push}
+	When a node receive a message for the first time, they only send that message identifier to random selected peers. If those peers have not received the message, they make an explicit request.
+%	\begin{itemize}
+%		\item Less redundant traffic.
+%	\end{itemize}
+\end{block}
+
+\pause
+\begin{itemize}
+	\item Lazy push only makes sense with large payload sizes.
+	\item There are trade-offs.
+\end{itemize}
+	
+}
+
+\frame{
+\frametitle{Embedded Trees: Plumtree Protocol}
+
+\framesubtitle{Overview}
+	Plumtree: \textbf{p}ush-\textbf{l}azy-p\textbf{u}sh \textbf{m}ulticast \textbf{tree}.
+	
+	\begin{itemize}
+	\item It operates as any gossip protocol, each node gossips with \emph{f} neighbors on top of a random overlay.
+	\item Decentralized.
+	\pause
+	\item Creates (and maintain) an embedded tree on a random overlay.
+	\item It combines two distinct gossip strategies:
+	\begin{itemize}
+		\item Eager Push: In the random overlay links that belong to the embedded spanning tree.
+		\item Lazy Push: In the remaining random overlay links.
+	\end{itemize}
+	\pause
+	\item TCP is used between nodes as it offers a better reliability and an additional fault detection mechanism.
+	\end{itemize}
 
 }
 
+\frame{
+\frametitle{Embedded Trees: Plumtree Protocol}
+\framesubtitle{Building the Tree}
+
+	\begin{itemize}
+		\item Intuition: Use the links in the overlay that generated a message delivery.
+		\pause
+		\item After initialization all links in the overlay are candidates do belong to the spanning tree.
+		\item When a message is broadcasted, all links used to disseminate a redundant message are pruned from the tree.
+		\item If the random overlay is connected, after the dissemination of a message the tree will cover all nodes.
+	\end{itemize}
+
+}
+
+\frame{
+\frametitle{Embedded Trees: Plumtree Protocol}
+\framesubtitle{Building the Tree}
+
+	\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=0.9\textwidth]{exemplo/img1}
+  \end{center}
+	\end{figure}
+}	
+
+\frame{
+\frametitle{Embedded Trees: Plumtree Protocol}
+\framesubtitle{Building the Tree}
+
+	\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=0.9\textwidth]{exemplo/img2}
+  \end{center}
+	\end{figure}
+}	
+
+\frame{
+\frametitle{Embedded Trees: Plumtree Protocol}
+\framesubtitle{Building the Tree}
+
+	\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=0.9\textwidth]{exemplo/img3}
+  \end{center}
+	\end{figure}
+}	
+
+\frame{
+\frametitle{Embedded Trees: Plumtree Protocol}
+\framesubtitle{Building the Tree}
+
+	\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=0.9\textwidth]{exemplo/img1}
+  \end{center}
+	\end{figure}
+}	
+
+\frame{
+\frametitle{Embedded Trees: Plumtree Protocol}
+\framesubtitle{Building the Tree}
+
+	\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=0.9\textwidth]{exemplo/img4}
+  \end{center}
+	\end{figure}
+}	
+
+\frame{
+\frametitle{Embedded Trees: Plumtree Protocol}
+\framesubtitle{Building the Tree}
+
+	\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=0.9\textwidth]{exemplo/img5}
+  \end{center}
+	\end{figure}
+}	
+
+\frame{
+\frametitle{Embedded Trees: Plumtree Protocol}
+\framesubtitle{Building the Tree}
+
+	\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=0.9\textwidth]{exemplo/img6}
+  \end{center}
+	\end{figure}
+}	
+
+\frame{
+\frametitle{Embedded Trees: Plumtree Protocol}
+\framesubtitle{Building the Tree}
+
+	\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=0.9\textwidth]{exemplo/img7}
+  \end{center}
+	\end{figure}
+}	
+
+\frame{
+\frametitle{Embedded Trees: Plumtree Protocol}
+\framesubtitle{Building the Tree}
+
+	\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=0.9\textwidth]{exemplo/img8}
+  \end{center}
+	\end{figure}
+}	
+
+\frame{
+\frametitle{Embedded Trees: Plumtree Protocol}
+\framesubtitle{Building the Tree}
+
+	\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=0.9\textwidth]{exemplo/img9}
+  \end{center}
+	\end{figure}
+}	
+
+\frame{
+\frametitle{Embedded Trees: Plumtree Protocol}
+\framesubtitle{Building the Tree}
+
+	\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=0.9\textwidth]{exemplo/img10}
+  \end{center}
+	\end{figure}
+}	
 
 \frame{
 \frametitle{Embedded Trees: Plumtree Protocol}
 \framesubtitle{Recovering the Tree}
 
+	\begin{itemize}
+		\item If a node fails some nodes might become disconnected from the embedded tree.
+		\item When a node receives a announcement for a payload message it did not received it starts a timer.
+		\pause
+		\item If the timer expires before receiving the payload message the node explicitly request the payload.
+		\item Moves the node to whom it makes the request to its eagerPushPeers list.
+		\pause
+		\item The node that receives the request sends the payload.
+		\item Moves the requester to its eagerPushPeers list.
+		\pause
+		\item At the end of this process the embedded tree is repaired.	
+	\end{itemize}
 }
 
 
@@ -559,15 +1254,131 @@ When I started to think about this problem, I was mostly focused on peer-to-peer
 \frametitle{Embedded Trees: Plumtree Protocol}
 \framesubtitle{Sharing the Tree}
 
+	\begin{block}{Small number of senders}
+		\begin{itemize}
+			\item One Plumtree instance for each sender.
+			\item Lower latency.
+		\end{itemize}
+	\end{block}
+
+\pause
+
+	\begin{block}{Large number of senders}
+		\begin{itemize}
+			\item One single Plumtree instance shared by all senders.
+			\item Higher latency. 
+		\end{itemize}
+	\end{block}
+
+}
+
+\frame{
+\frametitle{Embedded Trees: Plumtree Protocol}
+\framesubtitle{Sharing the Tree}
+	\begin{itemize}
+		\item Initial motivation: Improve the latency with large number of senders.
+		\pause
+		\item Observations:
+			\begin{itemize}
+				\item New and better paths on the overlay might not be used for eager push.
+				\item Tree repair process is random.
+			\end{itemize}
+		\pause
+		\item Goal: Minimize the number of hops from sender to receiver.
+	\end{itemize}
+}
+
+\frame{
+\frametitle{Embedded Trees: Plumtree Protocol}
+\framesubtitle{Sharing the Tree}
+		\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=0.9\textwidth]{exemplo/img12}
+  \end{center}
+	\end{figure}
+}
+
+\frame{
+\frametitle{Embedded Trees: Plumtree Protocol}
+\framesubtitle{Sharing the Tree}
+		\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=0.9\textwidth]{exemplo/img13}
+  \end{center}
+	\end{figure}
+}
+
+\frame{
+\frametitle{Embedded Trees: Plumtree Protocol}
+\framesubtitle{Sharing the Tree}
+		\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=0.9\textwidth]{exemplo/img14}
+  \end{center}
+	\end{figure}
+}
+
+\frame{
+\frametitle{Embedded Trees: Plumtree Protocol}
+\framesubtitle{Sharing the Tree}
+		\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=0.9\textwidth]{exemplo/img15}
+  \end{center}
+	\end{figure}
 }
 
 \frame{
 \frametitle{Embedded Trees: Plumtree Protocol}
 \framesubtitle{Experimental Evaluation}
 
+\begin{itemize}
+	\item Evaluation was conducted with the Peersim simulator.
+	\item $10.000$ nodes system.
+	\item Hundreds and hundreds of Simulations.
+\end{itemize}
+
+\pause
+
+\begin{itemize}
+	\item Compare the performance between:
+	\begin{itemize}
+		\item A standard (push) Gossip Protocol named \emph{Eager}
+		\item Several configurations of Plumtree.
+	\end{itemize}
+\end{itemize}
 }
 
+\frame{
+\frametitle{Embedded Trees: Plumtree Protocol}
+\framesubtitle{Experimental Evaluation}
+		
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/redundancy_stable}
+  \end{center}
+\end{figure}
+}
 
+\frame{
+\frametitle{Embedded Trees: Plumtree Protocol}
+\framesubtitle{Experimental Evaluation}
+		\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/max_hop_stable}
+  \end{center}
+	\end{figure}
+}
+
+\frame{
+\frametitle{Embedded Trees: Plumtree Protocol}
+\framesubtitle{Experimental Evaluation}
+		\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/reliability_agg}
+  \end{center}
+	\end{figure}
+}
 
 \section{The Industry View: Cluster Metadata Management}
 
@@ -759,6 +1570,64 @@ Sender-Based. Minimize overhead w/ Lazy Construction
 \frametitle{The Academic View: When One Tree is not Enough}
 \framesubtitle{Understanding The Problem}
 
+	\begin{block}{We had Plumtree:}
+		\begin{itemize}
+		\item Efficient.
+		\item Very Robust.
+		\item Could even rebalance itself to improve latency (height of the tree).
+		\end{itemize}
+	\end{block}
+
+	\pause
+
+	\begin{block}{The reality about trees...}
+		Trees do not distribute the load evenly among participants.
+	\end{block}
+
+}
+
+\frame{
+\frametitle{The Academic View: When One Tree is not Enough}
+\framesubtitle{Understanding The Problem}
+	
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/nobalance1}
+  \end{center}
+\end{figure}
+}
+
+\frame{
+\frametitle{The Academic View: When One Tree is not Enough}
+\framesubtitle{Understanding The Problem}
+	
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/nobalance2}
+  \end{center}
+\end{figure}
+}
+
+\frame{
+\frametitle{The Academic View: When One Tree is not Enough}
+\framesubtitle{Understanding The Problem}
+	
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/nobalance3}
+  \end{center}
+\end{figure}
+}
+
+\frame{
+\frametitle{The Academic View: When One Tree is not Enough}
+\framesubtitle{Understanding The Problem}
+	
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=1\textwidth]{pics/nobalance4}
+  \end{center}
+\end{figure}
 }
 
 \subsection{Naive Solutions}
@@ -767,14 +1636,53 @@ Sender-Based. Minimize overhead w/ Lazy Construction
 \frametitle{The Academic View: When One Tree is not Enough}
 \framesubtitle{Naive Solutions}
 
+	\begin{block}{How hard can this be?}
+		\begin{itemize}
+			\item We started by experimenting with two simple approaches:
+			\item NUTS: Naive Unstructured spliTStream
+			\item BOLTS: Basic multiple Overlay-TreeS
+		\end{itemize}
+	\end{block}
 }
-
-
-\subsection{Other Solutions}
 
 \frame{
 \frametitle{The Academic View: When One Tree is not Enough}
-\framesubtitle{Other Solutions}
+\framesubtitle{Naive Solutions: NUTS}
+
+      \begin{itemize}
+        \item Pick  $t$ nodes at random and create  $t$  Plumtrees; each
+          rooted at a different node.
+      \end{itemize}
+      \begin{center}
+	\pgfimage<1>[width=7cm]{figs/nuts/nuts1}
+         \pgfimage<2>[width=7cm]{figs/nuts/nuts2}
+         \pgfimage<3>[width=7cm]{figs/nuts/nuts3}
+      \end{center}
+}
+
+\frame{
+\frametitle{The Academic View: When One Tree is not Enough}
+\framesubtitle{Naive Solutions: BOLTS}
+
+  \begin{itemize}
+    \item Create $t$ different unstructured overlays and create a
+      Plumtree using each overlay.
+  \end{itemize}
+  
+  \pgfimage<1>[width=5.5cm]{figs/bolts/bolts1}
+  \pgfimage<1>[width=5.5cm]{figs/bolts/bolts2}
+  \pgfimage<2>[width=5.5cm]{figs/bolts/bolts3}
+  \pgfimage<2>[width=5.5cm]{figs/bolts/bolts4}
+
+}
+
+\frame{
+\frametitle{The Academic View: When One Tree is not Enough}
+\framesubtitle{Naive Solutions: NUTS \& BOLTS}
+
+  \begin{center}
+  \pgfimage[width=10cm]{figs/motivation/interior}
+  \end{center}
 
 }
 
@@ -783,8 +1691,27 @@ Sender-Based. Minimize overhead w/ Lazy Construction
 \frame{
 \frametitle{The Academic View: When One Tree is not Enough}
 \framesubtitle{Understanding The Goal}
-
+  
+  \begin{block}{From one tree to multiple trees}
+  
+  \begin{itemize}
+    \item Load balancing:
+    \begin{itemize}
+    \item every node should be interior on the same number of trees
+    \end{itemize}
+    \item Use all resources:
+    \begin{itemize}
+      \item each node should be interior in at least one tree
+    \end{itemize}
+    \item Fault-tolerance:
+    \begin{itemize}
+      \item each node should be interior in at most one tree
+    \end{itemize}
+  \end{itemize}
+  
+  \end{block}
 }
+
 
 
 \section{The Thicket Protocol}
@@ -804,6 +1731,18 @@ Sender-Based. Minimize overhead w/ Lazy Construction
 \frametitle{The Thicket Protocol}
 \framesubtitle{Deploying the Trees}
 
+	\begin{itemize}
+		\item We use the same principle as in Plumtree to define trees, however:
+		\begin{itemize}
+			\item Overlay links are explicitly added to each tree (instead of removed).
+			\item Trees are deployed by taking into consideration the remaining trees.
+			\pause
+			\item Finding the minimal coordination necessary to achieve our goal is tricky.
+			\pause
+			\item Tree coverage is impossible at tree deployment time.
+		\end{itemize}
+	\end{itemize}
+
 }
 
 \subsection{Recovering Trees}
@@ -812,6 +1751,17 @@ Sender-Based. Minimize overhead w/ Lazy Construction
 \frametitle{The Thicket Protocol}
 \framesubtitle{Recovering Trees}
 
+	\begin{itemize}
+		\item Global coverage of trees is ensured by the repair mechanism.
+		\pause
+		\item All messages exchanged among nodes convey information about the load of the sender.
+		\begin{itemize}
+			\item How many messages it sends per time unit.
+			\item How many child nodes in each tree.
+		\end{itemize}
+		\item Tree repair uses less loaded nodes.
+	\end{itemize}
+
 }
 
 \subsection{Experimental Results}
@@ -819,6 +1769,30 @@ Sender-Based. Minimize overhead w/ Lazy Construction
 \frame{
 \frametitle{The Thicket Protocol}
 \framesubtitle{Experimental Results}
+\begin{itemize}
+    \item Simulated a 10.000 overlay using PeerSim.
+    \item Comparison with NUTS and  BOLTS (and Plumtree).
+    \item Same underlying unstructured overlay network.
+    \item Assumes reliable FIFO channels.
+  \end{itemize}
+}
+
+\frame{
+\frametitle{The Thicket Protocol}
+\framesubtitle{Experimental Results}
+
+ \begin{center}
+  \pgfimage[width=10cm]{figs/interior}
+  \end{center}
+}
+
+\frame{
+\frametitle{The Thicket Protocol}
+\framesubtitle{Experimental Results}
+
+  \begin{center}
+  \pgfimage<2>[width=9cm]{figs/reliabilityr}
+  \end{center}
 
 }
 
