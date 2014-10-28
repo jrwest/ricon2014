@@ -1,0 +1,32 @@
+\BOOKMARK [2][]{Outline0.1}{Motivation}{}% 1
+\BOOKMARK [2][]{Outline0.2}{The Academic View: Data Dissemination}{}% 2
+\BOOKMARK [3][]{Outline0.2.1.9}{Design Alternatives: One to All}{Outline0.2}% 3
+\BOOKMARK [3][]{Outline0.2.2.24}{Design Alternatives: Spanning Tree}{Outline0.2}% 4
+\BOOKMARK [3][]{Outline0.2.3.45}{Design Alternatives: Flood}{Outline0.2}% 5
+\BOOKMARK [3][]{Outline0.2.4.59}{Design Alternatives: Gossip}{Outline0.2}% 6
+\BOOKMARK [3][]{Outline0.2.5.76}{Design Alternatives: Embedded Tree}{Outline0.2}% 7
+\BOOKMARK [2][]{Outline0.3}{Embedded Tree: Plumtree Protocol}{}% 8
+\BOOKMARK [2][]{Outline0.4}{The Industry View: Cluster Metadata Management}{}% 9
+\BOOKMARK [3][]{Outline0.4.1.122}{Global Information, Needed Locally}{Outline0.4}% 10
+\BOOKMARK [3][]{Outline0.4.2.123}{Requirements}{Outline0.4}% 11
+\BOOKMARK [2][]{Outline0.5}{Cluster Metadata Management In Riak}{}% 12
+\BOOKMARK [3][]{Outline0.5.1.128}{Implementations}{Outline0.5}% 13
+\BOOKMARK [3][]{Outline0.5.2.129}{Motivations}{Outline0.5}% 14
+\BOOKMARK [3][]{Outline0.5.3.130}{Plumtree: From Academia to Industry}{Outline0.5}% 15
+\BOOKMARK [3][]{Outline0.5.4.131}{Extending Plumtree}{Outline0.5}% 16
+\BOOKMARK [3][]{Outline0.5.5.132}{Measurements}{Outline0.5}% 17
+\BOOKMARK [3][]{Outline0.5.6.133}{Peer Service Tuning}{Outline0.5}% 18
+\BOOKMARK [2][]{Outline0.6}{The Academic View: When One Tree is not Enough}{}% 19
+\BOOKMARK [3][]{Outline0.6.1.135}{Understanding The Problem}{Outline0.6}% 20
+\BOOKMARK [3][]{Outline0.6.2.141}{Naive Solutions}{Outline0.6}% 21
+\BOOKMARK [3][]{Outline0.6.3.148}{Understanding The Goal}{Outline0.6}% 22
+\BOOKMARK [2][]{Outline0.7}{The Thicket Protocol}{}% 23
+\BOOKMARK [3][]{Outline0.7.1.151}{Deploying the Trees}{Outline0.7}% 24
+\BOOKMARK [3][]{Outline0.7.2.154}{Recovering Trees}{Outline0.7}% 25
+\BOOKMARK [3][]{Outline0.7.3.156}{Experimental Results}{Outline0.7}% 26
+\BOOKMARK [2][]{Outline0.8}{The Industry View: Improving Cluster Metadata}{}% 27
+\BOOKMARK [3][]{Outline0.8.1.160}{Measuring Interior Nodes}{Outline0.8}% 28
+\BOOKMARK [3][]{Outline0.8.2.162}{The Peer Service's Role}{Outline0.8}% 29
+\BOOKMARK [2][]{Outline0.9}{The Future of Cluster Metadata in Riak}{}% 30
+\BOOKMARK [3][]{Outline0.9.1.164}{Expand Usage}{Outline0.9}% 31
+\BOOKMARK [2][]{Outline0.10}{Summary}{}% 32
