@@ -89,7 +89,7 @@ How to disseminate information across a large number of participants?
 \begin{itemize}
 	\item Notification systems.
 	\item Streaming multimedia content.
-	\item \emph{Cluster Management}
+	\item \emph{Cluster Management}.
 \end{itemize}
 \end{block}
 
@@ -292,7 +292,7 @@ When I started to think about this problem, I was mostly focused on peer-to-peer
 	~\\
 	
 	\begin{center}
-	\huge{Spanning Treel}
+	\huge{Spanning Tree}
 	\end{center}
 
 }
@@ -660,25 +660,25 @@ When I started to think about this problem, I was mostly focused on peer-to-peer
 \end{block}
 }
 
-\frame{	
-\frametitle{The Academic View: Data Dissemination}
-\framesubtitle{Design Alternatives: Flood}
-\begin{figure}[h]
-  \begin{center}
-  \includegraphics[width=1\textwidth]{pics/flood10}
-  \end{center}
-\end{figure}
-}
-
-\frame{	
-\frametitle{The Academic View: Data Dissemination}
-\framesubtitle{Design Alternatives: Flood}
-\begin{figure}[h]
-  \begin{center}
-  \includegraphics[width=1\textwidth]{pics/flood11}
-  \end{center}
-\end{figure}
-}
+%\frame{	
+%\frametitle{The Academic View: Data Dissemination}
+%\framesubtitle{Design Alternatives: Flood}
+%\begin{figure}[h]
+%  \begin{center}
+%  \includegraphics[width=1\textwidth]{pics/flood10}
+%  \end{center}
+%\end{figure}
+%}
+%
+%\frame{	
+%\frametitle{The Academic View: Data Dissemination}
+%\framesubtitle{Design Alternatives: Flood}
+%\begin{figure}[h]
+%  \begin{center}
+%  \includegraphics[width=1\textwidth]{pics/flood11}
+%  \end{center}
+%\end{figure}
+%}
 
 \subsection{Design Alternatives: Gossip}
 
@@ -847,7 +847,7 @@ When I started to think about this problem, I was mostly focused on peer-to-peer
 		\begin{itemize}
 			\item Slightly inefficient (but better than flood).
 			\pause
-			\item No longer predictable (each message will be disseminated across different links.
+			\item No longer predictable (each message will be disseminated across different links).
 		\end{itemize}
 	\end{itemize}
 \end{block}
@@ -1031,9 +1031,16 @@ When I started to think about this problem, I was mostly focused on peer-to-peer
 \frametitle{The Academic View: Data Dissemination}
 \framesubtitle{Design Alternatives: Embedded Tree}
 
+	\begin{block}{Observation:}
+		The closure of the paths the lead to the first delivery of a message to each node forms a tree.
+	\end{block}
+
+	\pause
+
 	\begin{block}{This observation:}
 		Lead us to design the \textbf{Plumtree protocol}.
 	\end{block}
+	
 %	
 %	\pause
 %	
@@ -1048,8 +1055,31 @@ When I started to think about this problem, I was mostly focused on peer-to-peer
 
 \frame{
 \frametitle{Embedded Trees: Plumtree Protocol}
+\framesubtitle{}
+
+	\begin{quote}
+	\textbf{Epidemic Broadcast Trees.}\\
+	Jo{\~a}o Leit{\~a}o, Jos{\'e} Pereira and Lu{\'i}s Rodrigues\\ 
+	Proceedings of the 26th IEEE International Symposium on Reliable Distributed Systems, Beijing, China, October, 2007. 	
+	\end{quote}
+
+	\begin{figure}[th!]
+	\centering
+	\subfigure{\scalebox{.46}{\includegraphics{photos/jop}}}
+	\subfigure{\scalebox{1.11}{\includegraphics{photos/ler}}}
+	\end{figure}
+}
+
+\frame{
+\frametitle{Embedded Trees: Plumtree Protocol}
 \framesubtitle{Gossip modes of operation}
 	
+\begin{itemize}
+	\item There are $1001$ ways to Gossip...
+\end{itemize}
+
+\pause
+
 	\begin{block}{Eager push}
 	Nodes send the message payload to random selected peers as soon as they receive a message for the first time.
 %	\begin{itemize}
@@ -1065,12 +1095,6 @@ When I started to think about this problem, I was mostly focused on peer-to-peer
 %		\item Less redundant traffic.
 %	\end{itemize}
 \end{block}
-
-\pause
-\begin{itemize}
-	\item Lazy push only makes sense with large payload sizes.
-	\item There are trade-offs.
-\end{itemize}
 	
 }
 
@@ -1139,17 +1163,6 @@ When I started to think about this problem, I was mostly focused on peer-to-peer
 	\begin{figure}[h]
   \begin{center}
   \includegraphics[width=0.9\textwidth]{exemplo/img3}
-  \end{center}
-	\end{figure}
-}	
-
-\frame{
-\frametitle{Embedded Trees: Plumtree Protocol}
-\framesubtitle{Building the Tree}
-
-	\begin{figure}[h]
-  \begin{center}
-  \includegraphics[width=0.9\textwidth]{exemplo/img1}
   \end{center}
 	\end{figure}
 }	
@@ -1237,13 +1250,13 @@ When I started to think about this problem, I was mostly focused on peer-to-peer
 
 	\begin{itemize}
 		\item If a node fails some nodes might become disconnected from the embedded tree.
-		\item When a node receives a announcement for a payload message it did not received it starts a timer.
+		\item When a node receives a announcement for a message it did not received it starts a timer.
 		\pause
-		\item If the timer expires before receiving the payload message the node explicitly request the payload.
-		\item Moves the node to whom it makes the request to its eagerPushPeers list.
+		\item If the timer expires before receiving the message the node explicitly requests it to the node that sent the announcement.
+		\item Reintroduces the link to that node into the embedded tree.
 		\pause
-		\item The node that receives the request sends the payload.
-		\item Moves the requester to its eagerPushPeers list.
+		\item The node that had sent the announcement sends the message when requested.
+		\item It also reintroduces that link into the embedded tree.
 		\pause
 		\item At the end of this process the embedded tree is repaired.	
 	\end{itemize}
@@ -1343,7 +1356,7 @@ When I started to think about this problem, I was mostly focused on peer-to-peer
 \begin{itemize}
 	\item Compare the performance between:
 	\begin{itemize}
-		\item A standard (push) Gossip Protocol named \emph{Eager}
+		\item A standard (push) Gossip Protocol named \emph{Eager}.
 		\item Several configurations of Plumtree.
 	\end{itemize}
 \end{itemize}
@@ -1725,6 +1738,22 @@ Sender-Based. Minimize overhead w/ Lazy Construction
 }
 }
 
+\frame{
+\frametitle{The Thicket Protocol}
+
+	\begin{quote}
+	\textbf{Thicket: A Protocol for Building and Maintaining Multiple Trees in a P2P Overlay.}\\
+	M{\'a}rio Ferreira, Jo{\~a}o Leit{\~a}o, and Lu{\'i}s Rodrigues\\ 
+	Proceedings of the 29th IEEE Symposium on Reliable Distributed Systems (SRDS), New Delhi, India, 31 October-3 November 2010. 
+	\end{quote}
+
+	\begin{figure}[th!]
+	\centering
+	\subfigure{\scalebox{.31}{\includegraphics{photos/mf}}}
+	\subfigure{\scalebox{1.11}{\includegraphics{photos/ler}}}
+	\end{figure}
+}
+
 \subsection{Deploying the Trees}
 
 \frame{
@@ -1752,7 +1781,7 @@ Sender-Based. Minimize overhead w/ Lazy Construction
 \framesubtitle{Recovering Trees}
 
 	\begin{itemize}
-		\item Global coverage of trees is ensured by the repair mechanism.
+		\item Global coverage of trees is provided by the repair mechanism.
 		\pause
 		\item All messages exchanged among nodes convey information about the load of the sender.
 		\begin{itemize}
@@ -1791,7 +1820,7 @@ Sender-Based. Minimize overhead w/ Lazy Construction
 \framesubtitle{Experimental Results}
 
   \begin{center}
-  \pgfimage<2>[width=9cm]{figs/reliabilityr}
+  \pgfimage<1>[width=9cm]{figs/reliabilityr}
   \end{center}
 
 }
